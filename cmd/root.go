@@ -3,6 +3,7 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"numbers-to-words/convert"
 	"os"
 	"strconv"
 
@@ -32,7 +33,10 @@ var rootCmd = &cobra.Command{
 	},
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	Run: func(cmd *cobra.Command, args []string) {},
+	Run: func(cmd *cobra.Command, args []string) {
+		val, _ := strconv.Atoi(args[0])
+		fmt.Println(convert.Number2Words(val))
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
